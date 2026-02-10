@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauté Prestige - Boutique en Ligne</title>
+    <!--Lien vers le bon fichier CSS -->
+    <link rel="stylesheet" href="beauté_Prestige.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Beauté Prestige</h1>
+                <p class="tagline">Votre beauté, notre expertise</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#supports">Supports Visuels</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="cart-btn" id="cartBtn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h2>Découvrez l'Excellence de la Beauté</h2>
+            <p>Une sélection premium de produits cosmétiques haut de gamme</p>
+            <button class="cta-btn" onclick="scrollToProducts()">Explorer nos produits</button>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- Section Produits -->
+    <section class="products-section" id="produits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Produits Phares</h2>
+                <p>Une gamme complète de soins et cosmétiques premium</p>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="skincare">Soins du visage</button>
+                <button class="filter-btn" data-category="makeup">Maquillage</button>
+                <button class="filter-btn" data-category="fragrance">Parfums</button>
+                <button class="filter-btn" data-category="body">Soins du corps</button>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Produit 1 -->
+                <div class="product-card" data-category="skincare">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Sérum Anti-Âge Premium</span>
+                        </div>
+                        <span class="product-badge new">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sérum Éclat Jeunesse</h3>
+                        <p class="product-description">Sérum anti-âge enrichi en vitamine C et acide hyaluronique</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="reviews">(127 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">58 975 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(1)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Rouge à Lèvres Mat</span>
+                        </div>
+                        <span class="product-badge bestseller">Best-seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rouge Velours Mat</h3>
+                        <p class="product-description">Couleur intense longue tenue, formule hydratante</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="reviews">(203 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">22 895 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(2)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="product-card" data-category="fragrance">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Eau de Parfum</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Essence Royale</h3>
+                        <p class="product-description">Notes florales et boisées, tenue exceptionnelle</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="reviews">(89 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">82 000 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(3)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 4 -->
+                <div class="product-card" data-category="skincare">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Crème Hydratante</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Crème Veloutée Hydra+</h3>
+                        <p class="product-description">Hydratation intense 24h, peaux sensibles</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="reviews">(156 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">44 280 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(4)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 5 -->
+                <div class="product-card" data-category="body">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Huile Précieuse</span>
+                        </div>
+                        <span class="product-badge new">Nouveau</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Huile Soyeuse Réparatrice</h3>
+                        <p class="product-description">Nourrit et sublime la peau, parfum délicat</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="reviews">(94 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">29 520 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(5)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produit 6 -->
+                <div class="product-card" data-category="makeup">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <span>Palette Yeux</span>
+                        </div>
+                        <span class="product-badge bestseller">Best-seller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Palette Regard Intense</h3>
+                        <p class="product-description">12 teintes pigmentées mat et irisées</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="reviews">(178 avis)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="price">34 110 FCFA</span>
+                            <button class="add-to-cart" onclick="addToCart(6)">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="gallery-section" id="galerie">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Galerie</h2>
+                <p>Découvrez nos produits en images</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <div class="gallery-placeholder">
+                        <span>Sérum + Crème visage</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <div class="gallery-placeholder">
+                        <span>Collection Maquillage</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <div class="gallery-placeholder">
+                        <span>Parfums Premium</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <div class="gallery-placeholder">
+                        <span>Soins du Corps</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <div class="gallery-placeholder">
+                        <span>Nouveautés 2026</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <div class="gallery-placeholder">
+                        <span>Coffret Prestige</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Supports Visuels -->
+    <section class="supports-section" id="supports">
+        <div class="container">
+            <div class="section-header">
+                <h2>Supports Visuels Marketing</h2>
+                <p>Matériel promotionnel et publicitaire</p>
+            </div>
+
+            <div class="supports-grid">
+                <div class="support-card">
+                    <div class="support-image">
+                        <div class="support-placeholder portrait">
+                            <span>Affiche Printemps 2026</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Affiche Campagne Printemps</h3>
+                        <p>Format A2 - Nouvelle collection</p>
+                        <button class="download-btn" onclick="downloadSupport('affiche')">
+                            Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-image">
+                        <div class="support-placeholder portrait">
+                            <span>Flyer Promotionnel</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Flyer Offres Spéciales</h3>
+                        <p>Format A5 - Promotions en cours</p>
+                        <button class="download-btn" onclick="downloadSupport('flyer')">
+                            Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-image">
+                        <div class="support-placeholder landscape">
+                            <span>Bannière Web 1920x600</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Bannière Site Web</h3>
+                        <p>Format web - Header promotionnel</p>
+                        <button class="download-btn" onclick="downloadSupport('banner')">
+                            Télécharger JPG
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-image">
+                        <div class="support-placeholder square">
+                            <span>Carte Produit</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Fiches Produits</h3>
+                        <p>Format carré - Réseaux sociaux</p>
+                        <button class="download-btn" onclick="downloadSupport('card')">
+                            Télécharger PNG
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-image video">
+                        <div class="support-placeholder landscape">
+                            <span class="play-icon">▶</span>
+                            <span>Vidéo Promotionnelle</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Spot Publicitaire</h3>
+                        <p>Format HD 1080p - Découvrez la marque</p>
+                        <button class="download-btn" onclick="playVideo()">
+                            Voir la vidéo
+                        </button>
+                    </div>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-image">
+                        <div class="support-placeholder portrait">
+                            <span>Catalogue 2026</span>
+                        </div>
+                    </div>
+                    <div class="support-info">
+                        <h3>Catalogue Produits 2026</h3>
+                        <p>Format A4 - 32 pages</p>
+                        <button class="download-btn" onclick="downloadSupport('catalogue')">
+                            Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contactez-Nous</h2>
+                <p>Notre équipe est à votre écoute</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Cocody Deux-Plateaux, rue K4<br>Abidjan, Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+225 0575309693</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@beauteprestige.fr</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lun - Sam: 9h - 19h<br>Dimanche: Fermé</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Téléphone (optionnel)">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Beauté Prestige</h4>
+                    <p>L'excellence de la cosmétique ivoirienne depuis 1985</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">📌</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#supports">Supports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Recevez nos offres exclusives</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre email">
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Beauté Prestige. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox pour la galerie -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="#" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <button class="lightbox-prev" onclick="changeLightboxImage(-1)">❮</button>
+        <button class="lightbox-next" onclick="changeLightboxImage(1)">❯</button>
+    </div>
+
+    <!-- Panier Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Votre Panier</h3>
+                <span class="close-cart" onclick="closeCart()">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">0 FCFA</span>
+                </div>
+                <button class="checkout-btn">Commander</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Lien vers le bon fichier JavaScript -->
+    <script src="beauté_Prestige.js"></script>
+</body>
+</html>
